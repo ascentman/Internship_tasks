@@ -1,0 +1,71 @@
+
+
+ PhoneBook3
+
+ Storyboard
+- всі компоненти мают мати імена
+- всі компоненти не мають містити ніяких текстів (name, surname)малюнків і тп (чому?)
+
+ Contact 
+- ok
+
+ ContactTableViewCell
+
+- UITableViewCell+Identifier - в окремий файл
+- prepareForReuse - метод lifecycle - має бути зверху
+-     private let imageEmpty = "empty" - то ж в enum з константами
+- applyAppearence - не треба extension (який мінус коли багато extension на 1 клас?)
+- 
+
+ TableViewController
+
+- що в навзі не дуже добре? як можна краще описати і назвати даний контролер?
+- viewDidLoad - той код шо в середині можна винести ще в один метод - тоді відразу буде зрозуміло шо робиться в методі 
+- self. можна не писати
+- if(segue => if (segue ітп - codeStyle
+- 
+    private let detailedSegue = "detailedSegue"
+    private let settingsSegue = "settingsSegue"
+    в enum з константами
+- 1.png - codeStyle
+- TableViewControllerDelegate такого немає - TableViewDelegate і там описані методи DataSource 
+- cellForRowAt - містить код який можна перенести в cell - тоді cell сам себе конфігурватиме з певрного обєкту - зменшиш відповідальність контролера
+
+ SettingsViewController
+
+- константи (те ж саме)
+- value(forKey: selectedTheme) as? Bool - bool(key: ...) - дивися api
+- всі протоколи мають бути :class а делегати weak - чому?
+
+ ContactViewController
+
+- делегати/протоколи - те ж саме шо і в SettingsViewController
+- IBAction func - де accessModifiers
+- ContactViewController: ImagePickerClass - як ріщення - як ще можна було б зробити (більш обєктно?)
+
+ AppDelegate
+
+- 2 пустих рядка вкінці файлу
+
+ FileManagerClass
+
+- де відступи між властивостями - все злилося в купу
+- appendingPathComponent - о, оце діло, добре!
+-         try? manager.createContactDirectory()
+        try? manager.createImagesDirectory()
+        це можна було помістити в failable init для FileManagerClass
+
+Функціональність
+
+- перший раз коли натискаю "+" - можна йти варити каву - дуже довго вантажиться- чому? виправити
+- дозвіл на фото/камеру ніхто не питає
+- якшо камера недоступна (немає наприклад на ipod) то я як користувач нічого не побачу
+- після введення імя хотілося б мати next замість enter на клавіатурі (2.png)
+- сховати клавіатуру не можу якшо я ввів surname
+- після перезапуску додатку фото не показується (3.png)
+- default photo кожен раз копіюється. хоча можна використати одне і теж на всі контакти з default фото
+- після видалення контакту фото не чиститься (3.png)
+
+
+Висновок
+- набагато ліпше ніж перша версія, але все ще треба покращити деякі моменти, особливо увагу до дрібних деталей. Думаю основи по fileManagment отримані. Рекомендую виправити всі коментарі
