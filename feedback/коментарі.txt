@@ -1,0 +1,21 @@
+коментарі
+ - виправити гіт - ті ж самі коменти і шо попердні рази (старий)
+ - назви комітів - "comments!!!!!" "weewweew" нічого про себе не кажуть
+ 	має бути так, щоб можна було скласти речення типу <this commit "message" >
+ 	наприклад <"this commit "fix bug with scrollView">
+ 	<"this commit "add new functionality for remote control screen">
+
+ 	виправити
+
+ - умови завдання додавати в гіт в окрему папку (task) (надалі)
+
+
+ Threads
+ - ViewController - зайвий код^ codeStyle є ще подвійні пусті рядки, якісь відступи, але вже ліпше
+ - syncWithAsyncQueue - ok
+ - concurrentThreads - ok, які є альтернативи? (dispatch_queue_create)
+ - onMainThread - nok, неправильно, поправити - див скріншот 1
+ - onMainThreadWithDelay - частково (проблема з попердньго завдання), затримка ок - які альтернативи? (додати)
+ - serialQueueMethod - ok
+ - concurrentQueueMethod - ok
+
