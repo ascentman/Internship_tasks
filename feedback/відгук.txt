@@ -1,0 +1,28 @@
+Загальні
+
+всі гілки мають йти з master
+на master має бути лиш gitIgnore
+відповідно зроби rebase всіх гілок з master
+
+ми працюємо на вкладці week36 в googleDoc а не week35 - оновити інфу
+
+
+Code:
+
+AnimateTextViewController
+- marks for different section
+- IBAction func buttonClicked accessModifier
+
+
+SubClassLabel
+- name? why not use "AnimatableLable" or "PrintingLable" or whatever?
+- final for class
+- guard style
+	        guard let count = symbolsCount else {
+           			 return
+       			 }
+- де умова задачі, опис завдання? я писав шоб додавав в гіт
+
+Функціональність - ну тут вже все обговорили до цього
+
+2-ге завдання не виконане (Scheduler)
