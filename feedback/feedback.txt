@@ -1,0 +1,5 @@
+codestyle:
+
+final for classes and functions
+// MARK: inside classes
+рішення - то вже звісно обговорили - без коментарів
