@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:EmbeddedVCTask.xcodeproj">
+      location = "self:EmbeddedVC.xcodeproj">
    </FileRef>
 </Workspace>
