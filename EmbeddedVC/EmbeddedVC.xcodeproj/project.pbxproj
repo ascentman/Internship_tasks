@@ -13,9 +13,7 @@
 		808E7F912147B84F008A77CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E7F8F2147B84F008A77CD /* LaunchScreen.storyboard */; };
 		808E7F992147BD3B008A77CD /* CarPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E7F982147BD3B008A77CD /* CarPagesViewController.swift */; };
 		808E7F9B2147BD5C008A77CD /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E7F9A2147BD5C008A77CD /* CarViewController.swift */; };
-		808E7F9D2147CAFD008A77CD /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E7F9C2147CAFD008A77CD /* Car.swift */; };
 		808E7FA7214938C1008A77CD /* Cars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 808E7FA6214938C1008A77CD /* Cars.plist */; };
-		808E7FA9214A7A19008A77CD /* PageForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E7FA8214A7A19008A77CD /* PageForViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +25,7 @@
 		808E7F922147B84F008A77CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		808E7F982147BD3B008A77CD /* CarPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPagesViewController.swift; sourceTree = "<group>"; };
 		808E7F9A2147BD5C008A77CD /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
-		808E7F9C2147CAFD008A77CD /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		808E7FA6214938C1008A77CD /* Cars.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Cars.plist; sourceTree = "<group>"; };
-		808E7FA8214A7A19008A77CD /* PageForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageForViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				808E7F862147B84E008A77CD /* AppDelegate.swift */,
-				808E7F9C2147CAFD008A77CD /* Car.swift */,
 				808E7F982147BD3B008A77CD /* CarPagesViewController.swift */,
-				808E7FA8214A7A19008A77CD /* PageForViewController.swift */,
 				808E7F9A2147BD5C008A77CD /* CarViewController.swift */,
 				808E7F8A2147B84E008A77CD /* Main.storyboard */,
 				808E7FA6214938C1008A77CD /* Cars.plist */,
@@ -148,11 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				808E7F9D2147CAFD008A77CD /* Car.swift in Sources */,
 				808E7F992147BD3B008A77CD /* CarPagesViewController.swift in Sources */,
 				808E7F872147B84E008A77CD /* AppDelegate.swift in Sources */,
 				808E7F9B2147BD5C008A77CD /* CarViewController.swift in Sources */,
-				808E7FA9214A7A19008A77CD /* PageForViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,13 @@ import UIKit
 
 final class CarPagesViewController: UIPageViewController {
 
-    private var currentIndex: Int = 0
+    private var carArray: [String] = []
+   
+    private enum Constants {
+        static let cars = "Cars"
+        static let storyboard = "Main"
+    }
+    
     
     // MARK: - Lifecycle
     
@@ -18,19 +24,27 @@ final class CarPagesViewController: UIPageViewController {
         super.viewDidLoad()
         
         self.dataSource = self
-        self.delegate = self
         
-        if let firstViewController = viewPageFor(0)?.viewController {
+        if let array = loadCarsFromPlist() {
+            carArray = array
+        }
+        
+        if let firstViewController = viewPageFor(0) {
             setViewControllers([firstViewController], direction: .forward, animated: false, completion: nil)
         }
     }
     
-    func viewPageFor(_ index: Int) -> PageForViewController? {
-        return PageForViewController(for: index)
+    private func viewPageFor(_ index: Int) -> CarViewController? {
+        if let carViewController = UIStoryboard(name: Constants.storyboard, bundle: nil).instantiateViewController(withIdentifier: Constants.cars) as? CarViewController {
+            carViewController.imageFileName = carArray[index]
+            carViewController.pageIndex = index
+            return carViewController
+        }
+        return nil
     }
     
-    class func loadCarsFromPlist() -> [String]? {
-        if let path = Bundle.main.path(forResource: "Cars", ofType: "plist"),
+    private func loadCarsFromPlist() -> [String]? {
+        if let path = Bundle.main.path(forResource: Constants.cars, ofType: "plist"),
             let rawArray = NSArray(contentsOfFile: path) as? [String] {
             return rawArray
         }
@@ -38,40 +52,38 @@ final class CarPagesViewController: UIPageViewController {
     }
 }
 
-// MARK: UIPageViewControllerDelegate & UIPageViewControllerDataSource
+// MARK: UIPageViewControllerDataSource - delegate
 
-extension CarPagesViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
+extension CarPagesViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        guard  let viewControllerBefore = viewPageFor(currentIndex - 1)?.viewController else {
+        let viewController = viewController as? CarViewController
+        guard var index = viewController?.pageIndex else {
             return nil
         }
-        currentIndex -= 1
-        return viewControllerBefore
+
+        if index <= 0 {
+            return nil
+        }
+        index -= 1
+        return viewPageFor(index)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        if let count = CarPagesViewController.loadCarsFromPlist()?.count {
-            if currentIndex < count {
-                guard  let viewControllerBefore = viewPageFor(currentIndex + 1)?.viewController else {
-                    return nil
-                }
-                currentIndex += 1
-                return viewControllerBefore
-            }
+        let viewController = viewController as? CarViewController
+        guard var index = viewController?.pageIndex else {
+            return nil
         }
-        return nil
+        
+        if index >= carArray.count - 1 {
+            return nil
+        }
+        index += 1
+        return viewPageFor(index)
     }
-
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        if let count = CarPagesViewController.loadCarsFromPlist()?.count {
-            return count
-        }
-        return 0
+        return carArray.count
     }
 
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {

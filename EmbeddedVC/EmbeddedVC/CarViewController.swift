@@ -8,13 +8,25 @@
 
 import UIKit
 
-class CarViewController: UIViewController {
+final class CarViewController: UIViewController {
 
     @IBOutlet private weak var carImageView: UIImageView!
     @IBOutlet private weak var carName: UILabel!
     
-    func updateWithCarObject(_ carObj: Car) {
-        carImageView.image = carObj.image
-        carName.text = carObj.name
+    var imageFileName: String!
+    var pageIndex: Int!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        customizePageControl()
+        carImageView.image = UIImage(named: imageFileName)
+        carName.text = imageFileName
+    }
+    
+    private func customizePageControl() {
+        let customPageControl = UIPageControl.appearance()
+        customPageControl.currentPageIndicatorTintColor = UIColor.orange
+        customPageControl.pageIndicatorTintColor = UIColor.lightGray
     }
 }
