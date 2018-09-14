@@ -28,5 +28,6 @@ final class CarViewController: UIViewController {
         let customPageControl = UIPageControl.appearance()
         customPageControl.currentPageIndicatorTintColor = UIColor.orange
         customPageControl.pageIndicatorTintColor = UIColor.lightGray
+        customPageControl.backgroundColor = UIColor.white
     }
 }

@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tq-o6-HEz">
-                                <rect key="frame" x="0.0" y="20" width="375" height="455"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="457"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="2gI-aP-3IN" kind="embed" id="8d8-0f-vt6"/>
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track" translatesAutoresizingMaskIntoConstraints="NO" id="YVg-ec-vsw">
-                                <rect key="frame" x="0.0" y="513" width="375" height="154"/>
+                                <rect key="frame" x="0.0" y="476" width="375" height="191"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,10 +35,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YVg-ec-vsw" secondAttribute="trailing" id="26e-1D-egE"/>
                             <constraint firstItem="YVg-ec-vsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3nH-Rw-Wha"/>
                             <constraint firstItem="5tq-o6-HEz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7on-6q-fBV"/>
-                            <constraint firstItem="5tq-o6-HEz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:1.5" constant="10.333333333333371" id="EBW-aX-SQs"/>
+                            <constraint firstItem="5tq-o6-HEz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:1.5" constant="12.333333333333371" id="EBW-aX-SQs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YVg-ec-vsw" secondAttribute="bottom" id="Ld5-OF-mz8"/>
                             <constraint firstItem="5tq-o6-HEz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NTU-aA-UjK"/>
-                            <constraint firstItem="YVg-ec-vsw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" constant="-12.75" id="SYm-lR-MyH"/>
+                            <constraint firstItem="YVg-ec-vsw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" constant="24.25" id="SYm-lR-MyH"/>
                             <constraint firstItem="5tq-o6-HEz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qfF-QU-wcE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,6 +56,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="7NV-uh-JO1" kind="relationship" relationship="rootViewController" id="bpK-rK-pNe"/>
@@ -70,15 +71,15 @@
             <objects>
                 <viewController id="7NV-uh-JO1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O4o-1N-WqX" userLabel="Container Root View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="zbH-iy-AJV" userLabel="Container Back Image View">
-                                <rect key="frame" x="0.0" y="44" width="375" height="416"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="418"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwM-JV-PiN">
-                                <rect key="frame" x="115" y="232" width="144" height="144"/>
+                                <rect key="frame" x="115" y="234" width="144" height="144"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="144" id="Xum-T5-xDw"/>
                                     <constraint firstAttribute="width" constant="144" id="jcd-kG-x9G"/>
