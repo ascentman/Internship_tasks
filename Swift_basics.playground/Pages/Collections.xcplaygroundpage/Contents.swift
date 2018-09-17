@@ -33,7 +33,6 @@ let families = [
     "Baratheon": ["Joffrey": 13, "Tommen": 8]
 ]
 print(families["Stark"]!["Jon"]!) // optional
-
 /*:
  ## 2.3 Set
  */
@@ -44,5 +43,4 @@ print(colors)
 colors.insert("Black")
 colors.insert("Black")
 print(colors)
-
 //: [Next](@next)

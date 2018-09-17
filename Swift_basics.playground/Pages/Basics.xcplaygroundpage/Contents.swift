@@ -15,7 +15,6 @@ let maxAttempts = 5
 
 var someprice = 100
 someprice = 130
-
 /*:
 ## 1.3 Int, Float, Type annotation
 */
@@ -27,10 +26,8 @@ let maxIntValue = Int.max
 
 let someFloat = 41.455
 type(of: someFloat) // Double
-
 let anotherFloat: Float = 32.554
 type(of: anotherFloat) //Float
-
 /*:
  ## 1.4 Booleans
  */
@@ -48,14 +45,12 @@ let name: String = "Mark"
 let surname = "Smith"
 let fullname = name + " " + surname
 let sentence = "Person with name: \(name) and surname: \(surname)."
-
 /*:
  ## 1.6 Typealias
  */
 typealias myType = Int
 let myVar: myType = 8
 print(myVar)
-
 /*:
  ## 1.7 Tuples
  */
@@ -63,7 +58,6 @@ let error404: (code: Int, value: String) = (404, "not found")
 print(error404.code, error404.value)
 let (codeOnly, _) = error404
 print(error404.0)
-
 /*:
  ## 1.8 Optionals
  */
@@ -95,11 +89,9 @@ if age != nil {
 var someAge: Int? = 20
 let ageNum = someAge ?? 0
 print(ageNum)
-
 /*:
  ## 1.9. Assert
  */
 let errorAge = -3
 assert(age >= 0, "Age less than 0 ;(")
-
 //: [Next](@next)
