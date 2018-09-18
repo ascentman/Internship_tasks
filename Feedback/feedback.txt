@@ -1,0 +1,45 @@
+
+загальні
+
+- код чистенько і гарно +1
+
+
+CarViewController
+
+let customPageControl = UIPageControl.appearance()
+
+як альтернативу можна також не описувати 
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+    }
+
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+    }
+    і створити свій pageControl і вручну ним керувати
+
+
+
+CarPagesViewController
+
+краще б мати модельку і з нею створювати контролер замість напряму створення контролера і модифікацію його через відкрити властивості
+            
+let rawArray = NSArray(contentsOfFile: path) as? [String] {
+тобто ти витягуєш обєкт певного типу і відразу переводиш його в інший тип - як щодо чисто Swift solution?
+Легший шлях не завжди кращий
+
+
+
+guard var index = viewController?.pageIndex else {
+            return nil
+        }
+
+        if index <= 0 {
+            return nil
+        }
+
+        те ж саме шо і 
+
+        guard var index = viewController?.pageIndexб index <= 0 else {
+            return nil
+        }
+
+Вцілому непогано
