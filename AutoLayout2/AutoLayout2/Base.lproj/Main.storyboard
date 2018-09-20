@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iD2-hm-DYg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iD2-hm-DYg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14313.18"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="phX-iO-4dC" customClass="CustomCell" customModule="AutoLayout2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="phX-iO-4dC" id="ULf-1a-hqx">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="phX-iO-4dC" id="ULf-1a-hqx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -30,13 +31,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Q1-tv-kcn">
-                                            <rect key="frame" x="8" y="40.5" width="359" height="72"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Q1-tv-kcn">
+                                            <rect key="frame" x="8" y="40.5" width="359" height="213"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="72" id="877-cx-dmg"/>
-                                            </constraints>
-                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -52,6 +50,7 @@
                                         <constraint firstItem="1Q1-tv-kcn" firstAttribute="leading" secondItem="ULf-1a-hqx" secondAttribute="leading" constant="8" id="9bp-Ft-be5"/>
                                         <constraint firstItem="imJ-XX-Edr" firstAttribute="top" secondItem="ULf-1a-hqx" secondAttribute="top" constant="8" id="B6x-b8-vHs"/>
                                         <constraint firstAttribute="trailing" secondItem="imJ-XX-Edr" secondAttribute="trailing" constant="8" id="KGy-PX-o82"/>
+                                        <constraint firstAttribute="bottom" secondItem="1Q1-tv-kcn" secondAttribute="bottom" constant="8" id="Nio-o5-pZG"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cDY-HP-mF5" secondAttribute="top" constant="68" id="Qy1-ts-Z9H"/>
                                         <constraint firstItem="1Q1-tv-kcn" firstAttribute="leading" secondItem="cDY-HP-mF5" secondAttribute="leading" id="SbR-r5-CPh"/>
                                         <constraint firstItem="imJ-XX-Edr" firstAttribute="leading" secondItem="ULf-1a-hqx" secondAttribute="leading" constant="8" id="ZdW-8x-HGc"/>
@@ -62,7 +61,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CellImageView" destination="cDY-HP-mF5" id="i62-tg-9nf"/>
-                                    <outlet property="cellHeight" destination="877-cx-dmg" id="mcA-2q-oX4"/>
                                     <outlet property="descriptionTextView" destination="1Q1-tv-kcn" id="kw2-bz-2Kp"/>
                                     <outlet property="label" destination="imJ-XX-Edr" id="CHJ-hD-V8k"/>
                                 </connections>

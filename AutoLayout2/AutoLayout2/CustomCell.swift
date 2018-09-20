@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+final class CustomCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var CellImageView: UIImageView!
-    @IBOutlet weak var cellHeight: NSLayoutConstraint!
 }
