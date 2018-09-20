@@ -14,9 +14,6 @@ class RootTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableView.automaticDimension
-        
     }
     
     // MARK: - TableView data source
@@ -30,20 +27,11 @@ class RootTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? CustomCell else {
             return UITableViewCell()
         }
-        cell.label.text = contentOfCell
-        cell.label.numberOfLines = 2
-//        if contentOfCell.count > 200 {
-//            cell.moreButton.isHidden = false
-//        }
-        cell.delegate = self
+//        cell.layoutIfNeeded()
+        cell.label.text = contentOfCell.components(separatedBy: " ").first
+        cell.descriptionTextView.text = contentOfCell
+        let imageFrame = UIBezierPath(rect: CGRect(x: 0, y: 0, width: cell.CellImageView.frame.width, height: cell.CellImageView.frame.height))
+        cell.descriptionTextView.textContainer.exclusionPaths = [imageFrame]
         return cell
-    }
-}
-
-extension RootTableViewController: CellDelegate {
-    func contentDidChange(cell: CustomCell) {
-        cell.label.numberOfLines = 0
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
     }
 }

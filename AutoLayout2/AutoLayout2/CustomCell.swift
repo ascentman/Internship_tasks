@@ -8,18 +8,10 @@
 
 import UIKit
 
-protocol CellDelegate: class {
-    func contentDidChange(cell: CustomCell)
-}
-
 class CustomCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var moreButton: UIButton!
-    
-    weak var delegate: CellDelegate?
-    
-    @IBAction func moreButtonClicked(_ sender: Any) {
-        delegate?.contentDidChange(cell: self)
-    }
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var CellImageView: UIImageView!
+    @IBOutlet weak var cellHeight: NSLayoutConstraint!
 }
