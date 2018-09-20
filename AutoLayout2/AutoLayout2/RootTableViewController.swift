@@ -47,7 +47,7 @@ final class RootTableViewController: UITableViewController {
                 return UITableViewAutomaticDimension
             }
         }
-        // default cell height. 78 is equivalent for 3 lines of textView.
+        // default cell height. 78 is equivalent for 3 lines of textView
         return 78
     }
 }
