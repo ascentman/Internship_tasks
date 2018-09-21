@@ -12,6 +12,8 @@
 		8094FE9B2153F4FE004040C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8094FE992153F4FE004040C0 /* Main.storyboard */; };
 		8094FE9D2153F500004040C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8094FE9C2153F500004040C0 /* Assets.xcassets */; };
 		8094FEA02153F500004040C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8094FE9E2153F500004040C0 /* LaunchScreen.storyboard */; };
+		8094FEA82153FEDB004040C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8094FEA72153FEDB004040C0 /* GoogleService-Info.plist */; };
+		8094FEAC2154E500004040C0 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094FEAB2154E500004040C0 /* GoogleService.swift */; };
 		9D820AB0DAB7538EB23E9909 /* Pods_CocoaPodsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E956B0C02A579C20705801D4 /* Pods_CocoaPodsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		8094FE9C2153F500004040C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8094FE9F2153F500004040C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8094FEA12153F500004040C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8094FEA72153FEDB004040C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8094FEAB2154E500004040C0 /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
 		B5406F1465098AF5F873AEBF /* Pods-CocoaPodsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPodsApp/Pods-CocoaPodsApp.release.xcconfig"; sourceTree = "<group>"; };
 		D96A9005E880E9D3B6CC84AB /* Pods-CocoaPodsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPodsApp/Pods-CocoaPodsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E956B0C02A579C20705801D4 /* Pods_CocoaPodsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPodsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,11 +74,13 @@
 			isa = PBXGroup;
 			children = (
 				8094FE952153F4FE004040C0 /* AppDelegate.swift */,
+				8094FEAB2154E500004040C0 /* GoogleService.swift */,
 				8094FE972153F4FE004040C0 /* ViewController.swift */,
 				8094FE992153F4FE004040C0 /* Main.storyboard */,
 				8094FE9C2153F500004040C0 /* Assets.xcassets */,
 				8094FE9E2153F500004040C0 /* LaunchScreen.storyboard */,
 				8094FEA12153F500004040C0 /* Info.plist */,
+				8094FEA72153FEDB004040C0 /* GoogleService-Info.plist */,
 			);
 			path = CocoaPodsApp;
 			sourceTree = "<group>";
@@ -150,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8094FEA02153F500004040C0 /* LaunchScreen.storyboard in Resources */,
+				8094FEA82153FEDB004040C0 /* GoogleService-Info.plist in Resources */,
 				8094FE9D2153F500004040C0 /* Assets.xcassets in Resources */,
 				8094FE9B2153F4FE004040C0 /* Main.storyboard in Resources */,
 			);
@@ -163,15 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CocoaPodsApp/Pods-CocoaPodsApp-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
@@ -185,8 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CocoaPodsApp/Pods-CocoaPodsApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
@@ -194,8 +195,6 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -211,15 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CocoaPodsApp-checkManifestLockResult.txt",
 			);
@@ -237,6 +232,7 @@
 			files = (
 				8094FE982153F4FE004040C0 /* ViewController.swift in Sources */,
 				8094FE962153F4FE004040C0 /* AppDelegate.swift in Sources */,
+				8094FEAC2154E500004040C0 /* GoogleService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

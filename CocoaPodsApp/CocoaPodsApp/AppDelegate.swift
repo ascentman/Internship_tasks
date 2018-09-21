@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        GoogleService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 }
