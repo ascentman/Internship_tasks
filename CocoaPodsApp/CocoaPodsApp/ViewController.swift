@@ -25,12 +25,12 @@ class ViewController: UIViewController {
                 }
                 DispatchQueue.main.async {
                     if let imageUrl = userObj?.imageURL {
-                        Alamofire.request(imageUrl).response(completionHandler: { (response) in
-                            assert(response.error == nil, "can't download image")
-                            if let data = response.data {
+                        Alamofire.request(imageUrl).response {
+                            assert($0.error == nil, "can't download image")
+                            if let data = $0.data {
                                 self?.logoImageView.image = UIImage(data: data)
                             }
-                        })
+                        }
                     }
                 }
             }
