@@ -8,40 +8,39 @@
 
 import UIKit
 import GoogleSignIn
+import Alamofire
 
-class ViewController: UIViewController, GIDSignInUIDelegate {
+class ViewController: UIViewController {
 
-    
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var hello: UILabel!
     @IBOutlet weak var logoImageView: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     @IBAction func didTapSignIn(_ sender: Any) {
-        GoogleService.sharedInstance.signIn()
-        if let name = GoogleService.sharedInstance.userData["fullname"] as? String,
-            let email = GoogleService.sharedInstance.userData["email"] as? String {
-            hello.text = "Привіт, \(String(describing: name)), \(String(describing: email))"
+        GoogleService.sharedInstance.signIn(self) { [weak self] (userObj, error) in
+            DispatchQueue.main.async {
+                if let fullname = userObj?.fullname,
+                    let email = userObj?.email {
+                    self?.hello.text = "Привіт, \(fullname), \(email)"
+                }
+                DispatchQueue.main.async {
+                    if let imageUrl = userObj?.imageURL {
+                        Alamofire.request(imageUrl).response(completionHandler: { (response) in
+                            assert(response.error == nil, "can't download image")
+                            if let data = response.data {
+                                self?.logoImageView.image = UIImage(data: data)
+                            }
+                        })
+                    }
+                }
+            }
         }
-        self.loadViewIfNeeded()
     }
     
     @IBAction func didTapSignOut(_ sender: AnyObject) {
         
-        hello.text = "signed out"
-        GoogleService.sharedInstance.userData = [:]
-        logoImageView.image = nil
+        hello.text = "Signed out"
+        logoImageView.image = UIImage(named: "cat")
         GoogleService.sharedInstance.signOut()
-    }
-}
-
-extension UIImage {
-    convenience init?(withContentsOfUrl url: URL) throws {
-        let imageData = try Data(contentsOf: url)
-        self.init(data: imageData)
     }
 }

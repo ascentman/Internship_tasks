@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807D95F02158C77100ABB0D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95EF2158C77100ABB0D2 /* User.swift */; };
 		8094FE962153F4FE004040C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094FE952153F4FE004040C0 /* AppDelegate.swift */; };
 		8094FE982153F4FE004040C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8094FE972153F4FE004040C0 /* ViewController.swift */; };
 		8094FE9B2153F4FE004040C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8094FE992153F4FE004040C0 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		807D95EF2158C77100ABB0D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8094FE922153F4FE004040C0 /* CocoaPodsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPodsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8094FE952153F4FE004040C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8094FE972153F4FE004040C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8094FE952153F4FE004040C0 /* AppDelegate.swift */,
+				807D95EF2158C77100ABB0D2 /* User.swift */,
 				8094FEAB2154E500004040C0 /* GoogleService.swift */,
 				8094FE972153F4FE004040C0 /* ViewController.swift */,
 				8094FE992153F4FE004040C0 /* Main.storyboard */,
@@ -190,12 +193,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CocoaPodsApp/Pods-CocoaPodsApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -230,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807D95F02158C77100ABB0D2 /* User.swift in Sources */,
 				8094FE982153F4FE004040C0 /* ViewController.swift in Sources */,
 				8094FE962153F4FE004040C0 /* AppDelegate.swift in Sources */,
 				8094FEAC2154E500004040C0 /* GoogleService.swift in Sources */,

@@ -12,11 +12,20 @@ import GoogleSignIn
 final class GoogleService: NSObject {
     
     static let sharedInstance = GoogleService()
-    var userData: [String: Any] = [:]
-    fileprivate var presenter:UIViewController?
+    fileprivate var presenter: UIViewController?
+    fileprivate var singInCompletion: ((_ user: User?, _ error: Error?) -> ())?
+    fileprivate var disconnectCompletion: ((_ success: Bool, _ error:Error?)->())?
     
     @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        GIDSignIn.sharedInstance().clientID = "376576529530-ebng8phkau5phidnc4mnuioqetnqmp7j.apps.googleusercontent.com"
+        if let url = Bundle.main.url(forResource:"GoogleService-Info", withExtension: "plist") {
+            do {
+                let data = try Data(contentsOf:url)
+                let googlePlist = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String:Any]
+                GIDSignIn.sharedInstance().clientID = googlePlist?["CLIENT_ID"] as? String
+            } catch {
+                print("can't get CLIENT_ID")
+            }
+        }
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         return true
@@ -28,11 +37,14 @@ final class GoogleService: NSObject {
         GIDSignIn.sharedInstance().signOut()
     }
     
-    func signIn() {
+    func signIn(_ controller:UIViewController, completion: ((_ user: User?, _ error: Error?) -> ())?) {
+        singInCompletion = completion
+        presenter = controller
         GIDSignIn.sharedInstance().signIn()
     }
     
-    func disconnectUser() {
+    func disconnectUser(completion:((_ success: Bool, _ error:Error?)->())? = nil) {
+        disconnectCompletion = completion
         GIDSignIn.sharedInstance().disconnect()
     }
 }
@@ -41,13 +53,11 @@ final class GoogleService: NSObject {
 
 extension GoogleService: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-        } else {
-            userData["fullname"] = user.profile.name
-            userData["email"] = user.profile.email
-            userData["image"] = user.profile.imageURL(withDimension: 200)
-        }
+        let googleUserObj = User(fullname: user.profile.name, email: user.profile.email, imageURL: user.profile.imageURL(withDimension: 200))
+        singInCompletion?(googleUserObj, error)
+    }
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        disconnectCompletion?(error == nil, error)
     }
 }
 

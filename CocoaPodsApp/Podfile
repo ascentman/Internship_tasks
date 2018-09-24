@@ -4,5 +4,6 @@ target 'CocoaPodsApp' do
   use_frameworks!
 
 pod 'GoogleSignIn'
+pod 'Alamofire', '~> 4.7'
 
 end
