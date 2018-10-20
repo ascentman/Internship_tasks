@@ -129,10 +129,3 @@ guardDog.feed(with: ourMeal)
 
 let myHomePets = Home(animals: [myCat, petDog, guardDog])
 myHomePets.makeSound()
-
-
-/**
- SOLID - design principles intended to make software designs more understandable, flexible and maintainable.
- 
- - The Single Responsibility Principle: a class should have only a single responsibility
- */
