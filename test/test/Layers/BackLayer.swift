@@ -8,20 +8,6 @@
 
 import UIKit
 
-private enum OuterRectangle {
-    case width
-    case height
-    
-    func get() -> CGFloat {
-        switch self {
-        case .width:
-            return UIScreen.main.bounds.width
-        case .height:
-            return UIScreen.main.bounds.height
-        }
-    }
-}
-
 private enum InnerRectangle {
     case width
     case height
@@ -38,10 +24,10 @@ private enum InnerRectangle {
 
 class BackLayer: CAShapeLayer {
     
-    override init() {
+    init(inFrame: CGRect) {
         super.init()
         
-        path = drawPath().cgPath
+        path = drawPath(width: inFrame.maxX, heigth: inFrame.maxY).cgPath
         fillRule = CAShapeLayerFillRule.evenOdd
         fillColor = UIColor.lightGray.cgColor
         opacity = 0.6
@@ -50,11 +36,11 @@ class BackLayer: CAShapeLayer {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func drawPath() -> UIBezierPath {
-        let viewPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: OuterRectangle.width.get(), height: OuterRectangle.height.get()))
-        let rectPath = UIBezierPath(rect: CGRect(x: OuterRectangle.width.get() / 2 - InnerRectangle.width.get() / 2,
-                                                 y: OuterRectangle.height.get() / 2 - InnerRectangle.height.get() / 2,
+        
+    private func drawPath(width: CGFloat, heigth: CGFloat) -> UIBezierPath {
+        let viewPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: width, height: heigth))
+        let rectPath = UIBezierPath(rect: CGRect(x: width / 2 - InnerRectangle.width.get() / 2,
+                                                 y: heigth / 2 - InnerRectangle.height.get() / 2,
                                                  width: InnerRectangle.width.get(), height: InnerRectangle.height.get()))
         viewPath.append(rectPath)
         viewPath.usesEvenOddFillRule = true

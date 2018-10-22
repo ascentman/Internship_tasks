@@ -14,11 +14,16 @@
 		8073E2C8217DE6FB00C380AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2C6217DE6FB00C380AD /* LaunchScreen.storyboard */; };
 		8073E2D0217DE71500C380AD /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2CF217DE71500C380AD /* AnimatedView.swift */; };
 		8073E2D4217DEE3C00C380AD /* BackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2D3217DEE3C00C380AD /* BackLayer.swift */; };
-		8073E2D8217DF06800C380AD /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2D5217DF06800C380AD /* card.png */; };
-		8073E2D9217DF06800C380AD /* iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2D6217DF06800C380AD /* iphone.png */; };
-		8073E2DA217DF06800C380AD /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2D7217DF06800C380AD /* check.png */; };
 		8073E2DE217E155F00C380AD /* AnimatedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2DD217E155F00C380AD /* AnimatedView.xib */; };
 		8073E2E1217E214200C380AD /* CardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2E0217E214200C380AD /* CardLayer.swift */; };
+		CE5462E8217E609F005FA82A /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5462E5217E609F005FA82A /* card.png */; };
+		CE5462E9217E609F005FA82A /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5462E6217E609F005FA82A /* check.png */; };
+		CE5462EA217E609F005FA82A /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5462E7217E609F005FA82A /* phone.png */; };
+		CE5462EC217E68B2005FA82A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5462EB217E68B2005FA82A /* Animations.swift */; };
+		CE5462EE217E7E7A005FA82A /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5462ED217E7E7A005FA82A /* CALayer+Extensions.swift */; };
+		CE5462F0217E7E8E005FA82A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5462EF217E7E8E005FA82A /* UIImage+Extensions.swift */; };
+		CE5462F2217E7ED0005FA82A /* PhoneLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5462F1217E7ED0005FA82A /* PhoneLayer.swift */; };
+		CE5462F7217E82A7005FA82A /* CheckLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5462F6217E82A7005FA82A /* CheckLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +36,16 @@
 		8073E2C9217DE6FB00C380AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8073E2CF217DE71500C380AD /* AnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
 		8073E2D3217DEE3C00C380AD /* BackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLayer.swift; sourceTree = "<group>"; };
-		8073E2D5217DF06800C380AD /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card.png; path = ../../Downloads/card.png; sourceTree = "<group>"; };
-		8073E2D6217DF06800C380AD /* iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphone.png; path = ../../Downloads/iphone.png; sourceTree = "<group>"; };
-		8073E2D7217DF06800C380AD /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = ../../Downloads/check.png; sourceTree = "<group>"; };
 		8073E2DD217E155F00C380AD /* AnimatedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedView.xib; sourceTree = "<group>"; };
 		8073E2E0217E214200C380AD /* CardLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayer.swift; sourceTree = "<group>"; };
+		CE5462E5217E609F005FA82A /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.png; sourceTree = "<group>"; };
+		CE5462E6217E609F005FA82A /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		CE5462E7217E609F005FA82A /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		CE5462EB217E68B2005FA82A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		CE5462ED217E7E7A005FA82A /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		CE5462EF217E7E8E005FA82A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		CE5462F1217E7ED0005FA82A /* PhoneLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLayer.swift; sourceTree = "<group>"; };
+		CE5462F6217E82A7005FA82A /* CheckLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +64,9 @@
 			children = (
 				8073E2BC217DE6FA00C380AD /* test */,
 				8073E2BB217DE6FA00C380AD /* Products */,
-				8073E2D5217DF06800C380AD /* card.png */,
-				8073E2D7217DF06800C380AD /* check.png */,
-				8073E2D6217DF06800C380AD /* iphone.png */,
+				CE5462E5217E609F005FA82A /* card.png */,
+				CE5462E6217E609F005FA82A /* check.png */,
+				CE5462E7217E609F005FA82A /* phone.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,14 +81,13 @@
 		8073E2BC217DE6FA00C380AD /* test */ = {
 			isa = PBXGroup;
 			children = (
-				8073E2DF217E16C900C380AD /* New Group */,
 				8073E2BD217DE6FA00C380AD /* AppDelegate.swift */,
+				CE5462EB217E68B2005FA82A /* Animations.swift */,
 				8073E2BF217DE6FA00C380AD /* ViewController.swift */,
-				8073E2CF217DE71500C380AD /* AnimatedView.swift */,
-				8073E2D3217DEE3C00C380AD /* BackLayer.swift */,
-				8073E2E0217E214200C380AD /* CardLayer.swift */,
+				CE5462F5217E820B005FA82A /* AnimatedView */,
+				CE5462F3217E81CB005FA82A /* Layers */,
+				CE5462F4217E81E0005FA82A /* Extensions */,
 				8073E2C1217DE6FA00C380AD /* Main.storyboard */,
-				8073E2DD217E155F00C380AD /* AnimatedView.xib */,
 				8073E2C4217DE6FB00C380AD /* Assets.xcassets */,
 				8073E2C6217DE6FB00C380AD /* LaunchScreen.storyboard */,
 				8073E2C9217DE6FB00C380AD /* Info.plist */,
@@ -86,11 +95,33 @@
 			path = test;
 			sourceTree = "<group>";
 		};
-		8073E2DF217E16C900C380AD /* New Group */ = {
+		CE5462F3217E81CB005FA82A /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				8073E2D3217DEE3C00C380AD /* BackLayer.swift */,
+				CE5462F6217E82A7005FA82A /* CheckLayer.swift */,
+				8073E2E0217E214200C380AD /* CardLayer.swift */,
+				CE5462F1217E7ED0005FA82A /* PhoneLayer.swift */,
 			);
-			path = "New Group";
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		CE5462F4217E81E0005FA82A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE5462ED217E7E7A005FA82A /* CALayer+Extensions.swift */,
+				CE5462EF217E7E8E005FA82A /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE5462F5217E820B005FA82A /* AnimatedView */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2CF217DE71500C380AD /* AnimatedView.swift */,
+				8073E2DD217E155F00C380AD /* AnimatedView.xib */,
+			);
+			path = AnimatedView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,10 +182,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8073E2DA217DF06800C380AD /* check.png in Resources */,
+				CE5462E9217E609F005FA82A /* check.png in Resources */,
 				8073E2C8217DE6FB00C380AD /* LaunchScreen.storyboard in Resources */,
-				8073E2D8217DF06800C380AD /* card.png in Resources */,
-				8073E2D9217DF06800C380AD /* iphone.png in Resources */,
+				CE5462E8217E609F005FA82A /* card.png in Resources */,
+				CE5462EA217E609F005FA82A /* phone.png in Resources */,
 				8073E2C5217DE6FB00C380AD /* Assets.xcassets in Resources */,
 				8073E2DE217E155F00C380AD /* AnimatedView.xib in Resources */,
 				8073E2C3217DE6FA00C380AD /* Main.storyboard in Resources */,
@@ -170,9 +201,14 @@
 			files = (
 				8073E2C0217DE6FA00C380AD /* ViewController.swift in Sources */,
 				8073E2D0217DE71500C380AD /* AnimatedView.swift in Sources */,
+				CE5462F7217E82A7005FA82A /* CheckLayer.swift in Sources */,
+				CE5462EC217E68B2005FA82A /* Animations.swift in Sources */,
 				8073E2BE217DE6FA00C380AD /* AppDelegate.swift in Sources */,
+				CE5462EE217E7E7A005FA82A /* CALayer+Extensions.swift in Sources */,
 				8073E2D4217DEE3C00C380AD /* BackLayer.swift in Sources */,
 				8073E2E1217E214200C380AD /* CardLayer.swift in Sources */,
+				CE5462F0217E7E8E005FA82A /* UIImage+Extensions.swift in Sources */,
+				CE5462F2217E7ED0005FA82A /* PhoneLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
