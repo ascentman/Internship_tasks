@@ -40,24 +40,29 @@ class AnimatedView: UIView {
             let checkLayer = checkLayer else {
                 return
         }
-        
-//        cardLayer.delegate = self
-        cardLayer.addCardAnimation(from: CGPoint(x: bounds.maxX, y: 150), to: CGPoint(x: bounds.midX, y: 150))
-        
+        animateCardLayer { _ in
+            self.animateCheckLayer()
+        }
+
         layer.addSublayer(backLayer)
         layer.addSublayer(cardLayer)
         layer.addSublayer(phoneLayer)
         layer.addSublayer(checkLayer)
     }
-}
 
-extension AnimatedView: CAAnimationDelegate {
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock {
-            self.checkLayer?.removeFromSuperlayer()
+    private func animateCardLayer(_ completion: ((Bool) -> ())?) {
+        let toPoint = CGPoint(x: bounds.midX, y: 150)
+        let fromPoint = CGPoint(x: bounds.maxX, y: 150)
+        cardLayer?.animateLayer(from: fromPoint, to: toPoint) { isFinished in
+            completion?(isFinished)
         }
-        checkLayer?.addCheckAnimation(from: 0.0, to: 1.0)
-        CATransaction.commit()
+    }
+
+    private func animateCheckLayer() {
+        checkLayer?.animateLayer(from: 0.0, to: 1.0, with: { _ in
+            self.animateCardLayer({ _ in
+                self.animateCheckLayer()
+            })
+        })
     }
 }

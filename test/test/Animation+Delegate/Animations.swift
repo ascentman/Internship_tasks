@@ -17,7 +17,6 @@ class Animations {
         cardAnimation.fromValue = from
         cardAnimation.toValue = to
         cardAnimation.duration = 4.0
-        cardAnimation.isRemovedOnCompletion = true
         return cardAnimation
     }
     
@@ -25,7 +24,7 @@ class Animations {
         let checkAnimation = CABasicAnimation()
         checkAnimation.fromValue = from
         checkAnimation.toValue = to
-        checkAnimation.duration = 2.0
+        checkAnimation.duration = 1.0
         return checkAnimation
     }
     

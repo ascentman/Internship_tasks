@@ -16,6 +16,7 @@
 		8073E2D4217DEE3C00C380AD /* BackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2D3217DEE3C00C380AD /* BackLayer.swift */; };
 		8073E2DE217E155F00C380AD /* AnimatedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2DD217E155F00C380AD /* AnimatedView.xib */; };
 		8073E2E1217E214200C380AD /* CardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2E0217E214200C380AD /* CardLayer.swift */; };
+		8073E2E3217F083D00C380AD /* CAAnimation+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2E2217F083D00C380AD /* CAAnimation+Block.swift */; };
 		CE5462E8217E609F005FA82A /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5462E5217E609F005FA82A /* card.png */; };
 		CE5462E9217E609F005FA82A /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5462E6217E609F005FA82A /* check.png */; };
 		CE5462EA217E609F005FA82A /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5462E7217E609F005FA82A /* phone.png */; };
@@ -38,6 +39,7 @@
 		8073E2D3217DEE3C00C380AD /* BackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLayer.swift; sourceTree = "<group>"; };
 		8073E2DD217E155F00C380AD /* AnimatedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedView.xib; sourceTree = "<group>"; };
 		8073E2E0217E214200C380AD /* CardLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayer.swift; sourceTree = "<group>"; };
+		8073E2E2217F083D00C380AD /* CAAnimation+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAnimation+Block.swift"; sourceTree = "<group>"; };
 		CE5462E5217E609F005FA82A /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.png; sourceTree = "<group>"; };
 		CE5462E6217E609F005FA82A /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		CE5462E7217E609F005FA82A /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				8073E2BD217DE6FA00C380AD /* AppDelegate.swift */,
-				CE5462EB217E68B2005FA82A /* Animations.swift */,
+				8073E2E4217F08F100C380AD /* Animation+Delegate */,
 				8073E2BF217DE6FA00C380AD /* ViewController.swift */,
 				CE5462F5217E820B005FA82A /* AnimatedView */,
 				CE5462F3217E81CB005FA82A /* Layers */,
@@ -93,6 +95,15 @@
 				8073E2C9217DE6FB00C380AD /* Info.plist */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		8073E2E4217F08F100C380AD /* Animation+Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2E2217F083D00C380AD /* CAAnimation+Block.swift */,
+				CE5462EB217E68B2005FA82A /* Animations.swift */,
+			);
+			path = "Animation+Delegate";
 			sourceTree = "<group>";
 		};
 		CE5462F3217E81CB005FA82A /* Layers */ = {
@@ -209,6 +220,7 @@
 				8073E2E1217E214200C380AD /* CardLayer.swift in Sources */,
 				CE5462F0217E7E8E005FA82A /* UIImage+Extensions.swift in Sources */,
 				CE5462F2217E7ED0005FA82A /* PhoneLayer.swift in Sources */,
+				8073E2E3217F083D00C380AD /* CAAnimation+Block.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

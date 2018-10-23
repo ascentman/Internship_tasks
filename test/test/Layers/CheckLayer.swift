@@ -33,14 +33,22 @@ class CheckLayer: CALayer {
         contentsGravity = CALayerContentsGravity.resizeAspect
         frame = CGRect(x: 0, y: 0, width: Frame.x.get(), height: Frame.y.get())
         position = CGPoint(x: inFrame.midX, y: Frame.topMargin.get())
+        opacity = 0.0
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addCheckAnimation(from: CGFloat, to: CGFloat) {
-        let checkAnimation = Animations.shared.appearence(on: self, from: from, to: to)
-        self.add(checkAnimation, forKey: "opacity")
+//    func addCheckAnimation(from: CGFloat, to: CGFloat) -> CAAnimation {
+//        return Animations.shared.appearence(on: self, from: from, to: to)
+//    }
+    
+    func animateLayer(from: CGFloat, to: CGFloat, with completion: ((Bool) -> ())?) {
+        let checkAmimation = Animations.shared.appearence(on: self, from: from, to: to)
+        checkAmimation.isRemovedOnCompletion = true
+        checkAmimation.onComplete = completion
+        
+        self.add(checkAmimation, forKey: "opacity")
     }
 }

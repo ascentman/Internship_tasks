@@ -39,8 +39,14 @@ class CardLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addCardAnimation(from: CGPoint, to: CGPoint) {
-        let cardAnimation = Animations.shared.horizontalMovement(on: self, from: from, to: to)
-        self.add(cardAnimation, forKey: "position")
+//    func createCardAnimation(from: CGPoint, to: CGPoint) -> CAAnimation {
+//        return Animations.shared.horizontalMovement(on: self, from: from, to: to)
+//    }
+    
+    func animateLayer(from: CGPoint, to: CGPoint, with completion: ((Bool) -> ())?) {
+        let cardAmimation = Animations.shared.horizontalMovement(on: self, from: from, to: to)
+        cardAmimation.isRemovedOnCompletion = true
+        cardAmimation.onComplete = completion
+        self.add(cardAmimation, forKey: "position")
     }
 }
