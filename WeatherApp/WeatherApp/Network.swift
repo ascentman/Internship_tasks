@@ -22,7 +22,7 @@ final class Network {
             return
         }
         URLSession.shared.dataTask(with: weatherUrl) { (data, _, error) in
-            guard let data = data, error == nil else {
+            guard let data = data else {
                 return completion(nil, error)
             }
             do {
