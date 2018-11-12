@@ -14,15 +14,123 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Root view">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-fR-Ocp" userLabel="back img">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-1i-bk1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hmR-EC-C2R" userLabel="blur">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Enter a city" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-Q0-Ws7" userLabel="city">
+                                            <rect key="frame" x="8" y="45" width="359" height="48"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xW-8P-8SB" userLabel="go button">
+                                            <rect key="frame" x="157.5" y="101" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="Baa-w0-EPJ"/>
+                                                <constraint firstAttribute="height" constant="60" id="CAh-Yc-rgw"/>
+                                            </constraints>
+                                            <state key="normal" image="yellow_button"/>
+                                            <connections>
+                                                <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNc-Cf-Ok0"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xx-iG-gZG" userLabel="temperature">
+                                            <rect key="frame" x="187.5" y="193" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSf-vj-EVj" userLabel="pressure">
+                                            <rect key="frame" x="187.5" y="304" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
+                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-KY-QfB" userLabel="humidity">
+                                            <rect key="frame" x="187.5" y="326" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
+                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjG-zm-CA1" userLabel="wind speed">
+                                            <rect key="frame" x="187.5" y="346" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
+                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt5-9l-Hgk" userLabel="description">
+                                            <rect key="frame" x="187.5" y="213" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="36"/>
+                                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jSf-vj-EVj" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="1CX-wX-QNo"/>
+                                        <constraint firstItem="jt5-9l-Hgk" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="1Zl-sH-ofd"/>
+                                        <constraint firstItem="5xW-8P-8SB" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="4n7-8j-G67"/>
+                                        <constraint firstItem="5xW-8P-8SB" firstAttribute="top" secondItem="RZr-Q0-Ws7" secondAttribute="bottom" constant="8" id="5Lk-Fi-gnB"/>
+                                        <constraint firstItem="RZr-Q0-Ws7" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="68H-pi-wXh"/>
+                                        <constraint firstItem="RZr-Q0-Ws7" firstAttribute="top" secondItem="hmR-EC-C2R" secondAttribute="top" constant="45" id="6Ra-9s-4jh"/>
+                                        <constraint firstItem="Qdg-KY-QfB" firstAttribute="top" secondItem="jSf-vj-EVj" secondAttribute="bottom" constant="22" id="Gm3-fa-xEB"/>
+                                        <constraint firstItem="Qdg-KY-QfB" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="Lds-KW-pbt"/>
+                                        <constraint firstItem="JjG-zm-CA1" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="TlV-c8-VeD"/>
+                                        <constraint firstItem="3xx-iG-gZG" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="UG6-qR-7MV"/>
+                                        <constraint firstItem="RZr-Q0-Ws7" firstAttribute="leading" relation="lessThanOrEqual" secondItem="hmR-EC-C2R" secondAttribute="leading" constant="8" id="YMf-Of-kae"/>
+                                        <constraint firstItem="jSf-vj-EVj" firstAttribute="top" secondItem="jt5-9l-Hgk" secondAttribute="bottom" constant="91" id="ZPG-jx-oFs"/>
+                                        <constraint firstItem="3xx-iG-gZG" firstAttribute="top" secondItem="5xW-8P-8SB" secondAttribute="bottom" constant="32" id="cH4-PC-KPD"/>
+                                        <constraint firstItem="JjG-zm-CA1" firstAttribute="top" secondItem="Qdg-KY-QfB" secondAttribute="bottom" constant="20" id="oH2-sN-r47"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RZr-Q0-Ws7" secondAttribute="trailing" constant="8" id="qNp-ZI-v6k"/>
+                                        <constraint firstItem="jt5-9l-Hgk" firstAttribute="top" secondItem="3xx-iG-gZG" secondAttribute="bottom" constant="20" id="uPM-9n-vvK"/>
+                                        <constraint firstItem="5xW-8P-8SB" firstAttribute="centerX" secondItem="hmR-EC-C2R" secondAttribute="centerX" id="vSf-G5-HH9"/>
+                                    </constraints>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zgQ-fR-Ocp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fth-hD-g09"/>
+                            <constraint firstItem="zgQ-fR-Ocp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GsV-lI-Dic"/>
+                            <constraint firstItem="GyV-1i-bk1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MEH-3C-WT2"/>
+                            <constraint firstItem="zgQ-fR-Ocp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MEw-ze-nxD"/>
+                            <constraint firstItem="zgQ-fR-Ocp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Syg-oo-IX8"/>
+                            <constraint firstItem="GyV-1i-bk1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iKc-U6-z8U"/>
+                            <constraint firstItem="GyV-1i-bk1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wOd-sY-tPJ"/>
+                            <constraint firstItem="GyV-1i-bk1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xnJ-9Z-w1O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="RZr-Q0-Ws7" id="YD5-7G-Hd6"/>
+                        <outlet property="humidityLabel" destination="Qdg-KY-QfB" id="hHB-mt-8Cd"/>
+                        <outlet property="pressureLabel" destination="jSf-vj-EVj" id="cLC-HZ-05A"/>
+                        <outlet property="temperatureLabel" destination="3xx-iG-gZG" id="QhE-UI-Hyh"/>
+                        <outlet property="weatherDescriptionLabel" destination="jt5-9l-Hgk" id="7Sd-TF-ckJ"/>
+                        <outlet property="windSpeedLabel" destination="JjG-zm-CA1" id="f6l-Ad-emt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="117.39130434782609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="city" width="1600" height="1065"/>
+        <image name="yellow_button" width="1024" height="1024"/>
+    </resources>
 </document>
