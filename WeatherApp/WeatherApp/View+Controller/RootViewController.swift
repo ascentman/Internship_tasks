@@ -8,7 +8,13 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+private enum Constants {
+    static let pressure = "Pressure: "
+    static let humidity = "Humidity: "
+    static let windSpeed = "Wind speed: "
+}
+
+final class RootViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -48,13 +54,13 @@ class RootViewController: UIViewController {
                     self.weatherDescriptionLabel.text = longWeather
                 }
                 if let pressure = weather?.main?.pressure {
-                    self.pressureLabel.text = "Pressure: " + String(pressure)
+                    self.pressureLabel.text = Constants.pressure + String(pressure)
                 }
                 if let humidity = weather?.main?.humidity {
-                    self.humidityLabel.text = "Humidity: " + String(humidity)
+                    self.humidityLabel.text = Constants.humidity + String(humidity)
                 }
                 if let speed = weather?.wind?.speed {
-                    self.windSpeedLabel.text = "Wind speed: " + String(speed)
+                    self.windSpeedLabel.text = Constants.windSpeed + String(speed)
                 }
             }
         }
