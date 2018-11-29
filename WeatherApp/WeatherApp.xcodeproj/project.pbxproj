@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8051660F21B01A53005275B1 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051660E21B01A53005275B1 /* WeatherView.swift */; };
 		CE51C0012198D73D00C34CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0002198D73D00C34CCA /* AppDelegate.swift */; };
-		CE51C0032198D73D00C34CCA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0022198D73D00C34CCA /* RootViewController.swift */; };
+		CE51C0032198D73D00C34CCA /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0022198D73D00C34CCA /* WeatherPresenter.swift */; };
 		CE51C0062198D73D00C34CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE51C0042198D73D00C34CCA /* Main.storyboard */; };
 		CE51C0082198D73F00C34CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE51C0072198D73F00C34CCA /* Assets.xcassets */; };
 		CE51C00B2198D73F00C34CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE51C0092198D73F00C34CCA /* LaunchScreen.storyboard */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8051660E21B01A53005275B1 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		CE51BFFD2198D73D00C34CCA /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE51C0002198D73D00C34CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE51C0022198D73D00C34CCA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		CE51C0022198D73D00C34CCA /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
 		CE51C0052198D73D00C34CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE51C0072198D73F00C34CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE51C00A2198D73F00C34CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,12 +49,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8051660921AEEB9B005275B1 /* View+Controller */ = {
+		8051660921AEEB9B005275B1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				CE51C0022198D73D00C34CCA /* RootViewController.swift */,
+				CE51C0022198D73D00C34CCA /* WeatherPresenter.swift */,
 			);
-			path = "View+Controller";
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		8051660C21AEF3D8005275B1 /* Services */ = {
@@ -61,6 +63,14 @@
 				CE51C0142198F55100C34CCA /* Network.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8051660D21B01A05005275B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8051660E21B01A53005275B1 /* WeatherView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CE51BFF42198D73D00C34CCA = {
@@ -84,7 +94,8 @@
 			children = (
 				CE51C0002198D73D00C34CCA /* AppDelegate.swift */,
 				8051660821AEEB71005275B1 /* Model */,
-				8051660921AEEB9B005275B1 /* View+Controller */,
+				8051660D21B01A05005275B1 /* View */,
+				8051660921AEEB9B005275B1 /* Presenter */,
 				8051660C21AEF3D8005275B1 /* Services */,
 				CE51C0042198D73D00C34CCA /* Main.storyboard */,
 				CE51C0072198D73F00C34CCA /* Assets.xcassets */,
@@ -165,7 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE51C0032198D73D00C34CCA /* RootViewController.swift in Sources */,
+				8051660F21B01A53005275B1 /* WeatherView.swift in Sources */,
+				CE51C0032198D73D00C34CCA /* WeatherPresenter.swift in Sources */,
 				CE51C0132198DDF900C34CCA /* WeatherModel.swift in Sources */,
 				CE51C0152198F55100C34CCA /* Network.swift in Sources */,
 				CE51C0012198D73D00C34CCA /* AppDelegate.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  RootViewController.swift
+//  WeatherView.swift
 //  WeatherApp
 //
-//  Created by user on 11/11/18.
+//  Created by Vova on 11/29/18.
 //  Copyright © 2018 user. All rights reserved.
 //
 
@@ -14,7 +14,12 @@ private enum Constants {
     static let windSpeed = "Wind speed: "
 }
 
-final class RootViewController: UIViewController {
+protocol WeatherView: class {
+    func showWeather(_ data: WeatherModel)
+    func setDefaultTextValues()
+}
+
+final class WeatherViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -22,11 +27,14 @@ final class RootViewController: UIViewController {
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
+    private var presenter = WeatherPresenter()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.attachView(view: self)
+        // create model
         cityTextField.delegate = self
     }
     
@@ -36,52 +44,50 @@ final class RootViewController: UIViewController {
             if city.isEmpty {
                 setDefaultTextValues()
             } else {
-                let cityWithSpaces = allowSpaces(city)
-                getWeatherFromNetwork(cityWithSpaces)
+                self.presenter.loadWeatherForCity(city)
             }
         }
     }
     
     // MARK: - Private
     
-    private func getWeatherFromNetwork(_ city: String) {
-        Network.shared.getWeather(city) { (weather, error) in
-            DispatchQueue.main.async {
-                if let temperature = weather?.main?.temperature {
-                    self.temperatureLabel.text = String(temperature)
-                }
-                if let longWeather = weather?.weather?[0].description {
-                    self.weatherDescriptionLabel.text = longWeather
-                }
-                if let pressure = weather?.main?.pressure {
-                    self.pressureLabel.text = Constants.pressure + String(pressure)
-                }
-                if let humidity = weather?.main?.humidity {
-                    self.humidityLabel.text = Constants.humidity + String(humidity)
-                }
-                if let speed = weather?.wind?.speed {
-                    self.windSpeedLabel.text = Constants.windSpeed + String(speed)
-                }
-            }
-        }
-    }
-    
     private func allowSpaces(_ city: String) -> String {
         return city.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!
     }
+}
+
+// MARK: - Extensions
+
+extension WeatherViewController: WeatherView {
     
-    private func setDefaultTextValues() {
+    func setDefaultTextValues() {
         temperatureLabel.text = nil
         weatherDescriptionLabel.text = nil
         pressureLabel.text = nil
         humidityLabel.text = nil
         windSpeedLabel.text = nil
     }
+    
+    func showWeather(_ data: WeatherModel) {
+        if let temperature = data.main?.temperature {
+            self.temperatureLabel.text = String(temperature)
+        }
+        if let longWeather = data.weather?[0].description {
+            self.weatherDescriptionLabel.text = longWeather
+        }
+        if let pressure = data.main?.pressure {
+            self.pressureLabel.text = Constants.pressure + String(pressure)
+        }
+        if let humidity = data.main?.humidity {
+            self.humidityLabel.text = Constants.humidity + String(humidity)
+        }
+        if let speed = data.wind?.speed {
+            self.windSpeedLabel.text = Constants.windSpeed + String(speed)
+        }
+    }
 }
 
-// MARK: - Extensions
-
-extension RootViewController: UITextFieldDelegate {
+extension WeatherViewController: UITextFieldDelegate {
     
     // UITextFieldDelegate
     
