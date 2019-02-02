@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8051660F21B01A53005275B1 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051660E21B01A53005275B1 /* WeatherView.swift */; };
+		8051660F21B01A53005275B1 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051660E21B01A53005275B1 /* WeatherViewController.swift */; };
 		CE51C0012198D73D00C34CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0002198D73D00C34CCA /* AppDelegate.swift */; };
 		CE51C0032198D73D00C34CCA /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0022198D73D00C34CCA /* WeatherPresenter.swift */; };
 		CE51C0062198D73D00C34CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE51C0042198D73D00C34CCA /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8051660E21B01A53005275B1 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		8051660E21B01A53005275B1 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE51BFFD2198D73D00C34CCA /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE51C0002198D73D00C34CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE51C0022198D73D00C34CCA /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		8051660D21B01A05005275B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8051660E21B01A53005275B1 /* WeatherView.swift */,
+				8051660E21B01A53005275B1 /* WeatherViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8051660F21B01A53005275B1 /* WeatherView.swift in Sources */,
+				8051660F21B01A53005275B1 /* WeatherViewController.swift in Sources */,
 				CE51C0032198D73D00C34CCA /* WeatherPresenter.swift in Sources */,
 				CE51C0132198DDF900C34CCA /* WeatherModel.swift in Sources */,
 				CE51C0152198F55100C34CCA /* Network.swift in Sources */,
