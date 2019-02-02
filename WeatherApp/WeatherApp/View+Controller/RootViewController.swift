@@ -45,22 +45,22 @@ final class RootViewController: UIViewController {
     // MARK: - Private
     
     private func getWeatherFromNetwork(_ city: String) {
-        Network.shared.getWeather(city) { (weather, error) in
+        Network.shared.getWeather(city) { [weak self] (weather, error) in
             DispatchQueue.main.async {
                 if let temperature = weather?.main?.temperature {
-                    self.temperatureLabel.text = String(temperature)
+                    self?.temperatureLabel.text = String(temperature)
                 }
                 if let longWeather = weather?.weather?[0].description {
-                    self.weatherDescriptionLabel.text = longWeather
+                    self?.weatherDescriptionLabel.text = longWeather
                 }
                 if let pressure = weather?.main?.pressure {
-                    self.pressureLabel.text = Constants.pressure + String(pressure)
+                    self?.pressureLabel.text = Constants.pressure + String(pressure)
                 }
                 if let humidity = weather?.main?.humidity {
-                    self.humidityLabel.text = Constants.humidity + String(humidity)
+                    self?.humidityLabel.text = Constants.humidity + String(humidity)
                 }
                 if let speed = weather?.wind?.speed {
-                    self.windSpeedLabel.text = Constants.windSpeed + String(speed)
+                    self?.windSpeedLabel.text = Constants.windSpeed + String(speed)
                 }
             }
         }
