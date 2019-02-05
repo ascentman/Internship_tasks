@@ -18,14 +18,16 @@ final class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherViewModel.configure(weatherView)
         cityTextField.delegate = self
     }
 //
     @IBAction func buttonClicked(_ sender: Any) {
         
-//        let city = cityTextField.text
-//        if let city = city {
+        let city = cityTextField.text
+        if let city = city {
+            weatherViewModel.city = city
+            weatherViewModel.configure(weatherView)
+        }
 //            if city.isEmpty {
 //                setDefaultTextValues()
 //            } else {

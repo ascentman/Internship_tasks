@@ -14,62 +14,47 @@ private enum Constants {
     static let windSpeed = "Wind speed: "
 }
 
-struct RequestModel {
-    var temperature: String
-    var weatherDescription: String
-    var pressure: String
-    var humidity: String
-    var windSpeed: String
-    
-    init() {
-        self.temperature = ""
-        self.weatherDescription = ""
-        self.pressure = ""
-        self.humidity = ""
-        self.windSpeed = ""
-    }
-}
-
 class WeatherViewModel {
     
-    private var requestModel = RequestModel()
-    
-    typealias propertyChanged = ((_ city: String) -> ())?
-    private var cityResponse: propertyChanged
-    
-    var city: String = "" {
+    private var requestModel: WeatherModel!
+    var temperature: Float = 0.0
+    var weatherDescription = ""
+    var pressure = 0
+    var humidity = 0
+    var windSpeed: Float = 0.0
+    var city: String = "Lviv" {
         didSet {
-            
+//            getWeatherFromNetwork(city)
         }
     }
     
-    func getWeatherForCity(completion: propertyChanged) {
-        cityResponse = completion
-    }
-    
-    private func fillRequestModel(data: WeatherModel) {
-        if let temperature = data.main?.temperature {
-            requestModel.temperature = String(temperature)
-        }
-        if let longWeather = data.weather?[0].description {
-            requestModel.weatherDescription = longWeather
-        }
-        if let pressure = data.main?.pressure {
-            requestModel.pressure = Constants.pressure + String(pressure)
-        }
-        if let humidity = data.main?.humidity {
-            requestModel.humidity = Constants.humidity + String(humidity)
-        }
-        if let speed = data.wind?.speed {
-            requestModel.windSpeed = Constants.windSpeed + String(speed)
+    init() {
+        Network.shared.getWeather("Lviv") { [weak self] (weather, error) in
+            DispatchQueue.main.async {
+                if let temperature = weather?.main?.temperature {
+                    self?.temperature = temperature
+                }
+                if let longWeather = weather?.weather?[0].description {
+                    self?.weatherDescription = longWeather
+                }
+                if let pressure = weather?.main?.pressure {
+                    self?.pressure = pressure
+                }
+                if let humidity = weather?.main?.humidity {
+                    self?.humidity = humidity
+                }
+                if let speed = weather?.wind?.speed {
+                    self?.windSpeed = speed
+                }
+            }
         }
     }
     
     func configure(_ view: WeatherView) {
-        view.temperatureLabel.text = requestModel.temperature
-        view.weatherDescriptionLabel.text = requestModel.weatherDescription
-        view.humidityLabel.text = requestModel.humidity
-        view.pressureLabel.text = requestModel.pressure
-        view.windSpeedLabel.text = requestModel.windSpeed
+        view.temperatureLabel.text = String(temperature)
+        view.weatherDescriptionLabel.text = weatherDescription
+        view.humidityLabel.text = Constants.humidity + String(humidity)
+        view.pressureLabel.text = Constants.pressure + String(pressure)
+        view.windSpeedLabel.text = Constants.windSpeed + String(windSpeed)
     }
 }
