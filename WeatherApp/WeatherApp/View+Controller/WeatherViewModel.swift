@@ -16,23 +16,26 @@ private enum Constants {
 
 class WeatherViewModel {
     
-    private var requestModel: WeatherModel!
+//    private var requestModel: WeatherModel!
     var temperature: Float = 0.0
     var weatherDescription = ""
     var pressure = 0
     var humidity = 0
     var windSpeed: Float = 0.0
+    
     var city: String = "Lviv" {
         didSet {
 //            getWeatherFromNetwork(city)
         }
     }
     
+    var dynTemperature: Dynamic<Float> = Dynamic(20.0)
+    
     init() {
         Network.shared.getWeather("Lviv") { [weak self] (weather, error) in
             DispatchQueue.main.async {
                 if let temperature = weather?.main?.temperature {
-                    self?.temperature = temperature
+                    self?.dynTemperature = Dynamic(temperature)
                 }
                 if let longWeather = weather?.weather?[0].description {
                     self?.weatherDescription = longWeather
@@ -51,10 +54,12 @@ class WeatherViewModel {
     }
     
     func configure(_ view: WeatherView) {
-        view.temperatureLabel.text = String(temperature)
-        view.weatherDescriptionLabel.text = weatherDescription
-        view.humidityLabel.text = Constants.humidity + String(humidity)
-        view.pressureLabel.text = Constants.pressure + String(pressure)
-        view.windSpeedLabel.text = Constants.windSpeed + String(windSpeed)
+        view.temperatureLabel.text = String(dynTemperature.value)
+//        view.weatherDescriptionLabel.text = weatherDescription
+//        view.humidityLabel.text = Constants.humidity + String(humidity)
+//        view.pressureLabel.text = Constants.pressure + String(pressure)
+//        view.windSpeedLabel.text = Constants.windSpeed + String(windSpeed)
+//            }
+//        }
     }
 }

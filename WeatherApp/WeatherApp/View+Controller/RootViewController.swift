@@ -26,7 +26,7 @@ final class RootViewController: UIViewController {
         let city = cityTextField.text
         if let city = city {
             weatherViewModel.city = city
-            weatherViewModel.configure(weatherView)
+//            weatherViewModel.configure(weatherView)
         }
 //            if city.isEmpty {
 //                setDefaultTextValues()

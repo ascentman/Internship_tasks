@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE164C312207711F00C37C23 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C302207711F00C37C23 /* WeatherView.swift */; };
 		CE164C332207731700C37C23 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C322207731700C37C23 /* WeatherViewModel.swift */; };
+		CE164C37220B730900C37C23 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C36220B730900C37C23 /* Binder.swift */; };
 		CE51C0012198D73D00C34CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0002198D73D00C34CCA /* AppDelegate.swift */; };
 		CE51C0032198D73D00C34CCA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C0022198D73D00C34CCA /* RootViewController.swift */; };
 		CE51C0062198D73D00C34CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE51C0042198D73D00C34CCA /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		CE164C302207711F00C37C23 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		CE164C322207731700C37C23 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		CE164C36220B730900C37C23 /* Binder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 		CE51BFFD2198D73D00C34CCA /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE51C0002198D73D00C34CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE51C0022198D73D00C34CCA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				CE51C0142198F55100C34CCA /* Network.swift */,
+				CE164C36220B730900C37C23 /* Binder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE164C312207711F00C37C23 /* WeatherView.swift in Sources */,
+				CE164C37220B730900C37C23 /* Binder.swift in Sources */,
 				CE164C332207731700C37C23 /* WeatherViewModel.swift in Sources */,
 				CE51C0032198D73D00C34CCA /* RootViewController.swift in Sources */,
 				CE51C0132198DDF900C34CCA /* WeatherModel.swift in Sources */,
