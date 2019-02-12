@@ -16,12 +16,12 @@ private enum Constants {
 
 final class RootViewController: UIViewController {
     
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var weatherDescriptionLabel: UILabel!
-    @IBOutlet weak var pressureLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet private weak var cityTextField: UITextField!
+    @IBOutlet private weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet private weak var pressureLabel: UILabel!
+    @IBOutlet private weak var humidityLabel: UILabel!
+    @IBOutlet private weak var windSpeedLabel: UILabel!
     
     // MARK: - Lifecycle
     
