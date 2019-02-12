@@ -28,11 +28,7 @@ class WeatherViewModel {
     init(weather: WeatherModel = WeatherModel()) {
         self.weather = weather
     }
-}
-
-// MARK: - Private Methods
-
-extension WeatherViewModel {
+    
     func getWeatherFor(city: String) {
         self.city.value = city
         Network.shared.getWeather(city) { [weak self] (weatherObject, error) in
