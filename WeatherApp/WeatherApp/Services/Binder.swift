@@ -8,18 +8,9 @@
 
 import Foundation
 
-class Dynamic<T> {
+class Box<T> {
     typealias Listener = (T) -> Void
     var listener: Listener?
-    
-    func bind(listener: Listener?) {
-        self.listener = listener
-    }
-    
-    func bindAndFire(listener: Listener?) {
-        self.listener = listener
-        listener?(value)
-    }
     
     var value: T {
         didSet {
@@ -27,7 +18,12 @@ class Dynamic<T> {
         }
     }
     
-    init(_ v: T) {
-        value = v
+    init(_ value: T) {
+        self.value = value
+    }
+    
+    func bind(listener: Listener?) {
+        self.listener = listener
+        listener?(value)
     }
 }

@@ -9,21 +9,35 @@
 import Foundation
 
 final class WeatherModel: Codable {
-    let name: String?
-    let weather: [Weather]?
-    let main: Main?
-    let wind: Wind?
+    var name: String?
+    var weather: [Weather]?
+    var main: Main?
+    var wind: Wind?
+    
+    init() {
+        self.name = ""
+        self.weather = [Weather()]
+        self.main?.humidity = 0
+        self.main?.pressure = 0
+        self.main?.temperature = 0.0
+        self.wind = Wind()
+    }
 }
 
 final class Weather: Codable {
-    let description: String?
-    let icon: String?
+    var description: String?
+    var icon: String?
+    
+    init() {
+        self.description = ""
+        self.icon = ""
+    }
 }
 
 final class Main: Codable {
-    let temperature: Float?
-    let pressure: Int?
-    let humidity: Int?
+    var temperature: Float?
+    var pressure: Int?
+    var humidity: Int?
     private enum CodingKeys: String, CodingKey {
         case temperature = "temp"
         case pressure
@@ -32,5 +46,9 @@ final class Main: Codable {
 }
 
 final class Wind: Codable {
-    let speed: Float?
+    var speed: Float?
+    
+    init() {
+        self.speed = 0.0
+    }
 }

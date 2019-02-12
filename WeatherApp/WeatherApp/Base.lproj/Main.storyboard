@@ -21,13 +21,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11k-zS-P1u" userLabel="View with outlets" customClass="WeatherView" customModule="WeatherApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="humidityLabel" destination="Qdg-KY-QfB" id="Znv-Av-uRZ"/>
-                                    <outlet property="pressureLabel" destination="jSf-vj-EVj" id="8TI-oZ-Fyg"/>
-                                    <outlet property="temperatureLabel" destination="3xx-iG-gZG" id="10Z-DI-G5P"/>
-                                    <outlet property="weatherDescriptionLabel" destination="jt5-9l-Hgk" id="Nfa-Aj-3uo"/>
-                                    <outlet property="windSpeedLabel" destination="JjG-zm-CA1" id="SIj-il-mj3"/>
-                                </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-fR-Ocp" userLabel="back img">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -132,7 +125,11 @@
                     </view>
                     <connections>
                         <outlet property="cityTextField" destination="RZr-Q0-Ws7" id="6xC-II-F5B"/>
-                        <outlet property="weatherView" destination="11k-zS-P1u" id="bfB-5B-Zd4"/>
+                        <outlet property="humidityLabel" destination="Qdg-KY-QfB" id="x51-Im-FWg"/>
+                        <outlet property="pressureLabel" destination="jSf-vj-EVj" id="GfZ-Q6-GAN"/>
+                        <outlet property="temperatureLabel" destination="3xx-iG-gZG" id="VBf-Au-0UQ"/>
+                        <outlet property="weatherDescriptionLabel" destination="jt5-9l-Hgk" id="vqi-Mh-vPZ"/>
+                        <outlet property="windSpeedLabel" destination="JjG-zm-CA1" id="WHB-Og-PQ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
